@@ -1,0 +1,30 @@
+/* สำหรับหน้า SignUp */
+.signup-form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .signup-form-group label {
+    font-weight: normal;
+    text-align: left;
+    display: block;
+  }
+  
+  .signup-form-group input {
+    width: 100%;
+  }
+  
+  .signup-btn {
+    background-color: #6f42c1; /* สีม่วง */
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .password-toggle-icon {
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    cursor: pointer;
+  }
+  

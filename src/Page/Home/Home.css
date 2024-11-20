@@ -1,0 +1,15 @@
+.home-page .recommended-section .container {
+    background-image: url(../../Assets/Images/recommended-section-bg.jpg);
+    background-size: cover; /* เพิ่ม background-size เพื่อให้ภาพครอบคลุมเต็มพื้นที่ */
+  }
+  
+  .home-page .holiday-plan-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
+      url(../../Assets/Images/holiday-plan-bg.jpg);
+    background-size: cover; /* กำหนดให้ภาพครอบคลุมเต็มพื้นที่ */
+    background-blend-mode: overlay; /* เพื่อให้ gradient ซ้อนทับกับภาพพื้นหลัง */
+  }
+
+  .home-page .need-inspiration-section {
+    background-image: url(../../Assets/Images/need-inspiration-bg.jpg);
+  }

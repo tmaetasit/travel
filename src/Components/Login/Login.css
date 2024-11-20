@@ -1,0 +1,31 @@
+/* ใหม่สำหรับ Login Page */
+.login-form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form-group label {
+    font-weight: normal;  /* ไม่ใช้ตัวหนา */
+    text-align: left;  /* ทำให้ label ชิดซ้าย */
+    display: block;    /* ทำให้ label อยู่บรรทัดเดียวกับ input */
+  }
+  
+  .login-form-group input {
+    width: 100%;       /* ให้ input ครอบคลุมพื้นที่ */
+  }
+  
+  /* ปุ่ม Login */
+  .login-btn {
+    background-color: #6f42c1;  /* สีม่วง */
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .password-toggle-icon {
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,24 @@
+.carousel-max-height {
+    max-height: 600px;
+    overflow: hidden;
+  }
+  
+  .carousel-img {
+    height: 600px;
+    object-fit: cover;
+  }
+  
+  .profile-card {
+    width: 18rem;
+    position: relative;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    border: 5px solid white;
+    position: relative;
+    z-index: 1;
+  }
+  
