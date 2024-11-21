@@ -17,7 +17,7 @@ const ReviewDetail = () => {
     try {
       // ลบรีวิวผ่าน API
       const response = await axios.delete(
-        `http://localhost:3000/reviews/${reviewId}`
+        `http://localhost:7001/reviews/${reviewId}`
       );
       if (response.status === 200) {
         alert("Review deleted successfully");

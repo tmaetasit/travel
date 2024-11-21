@@ -4,7 +4,7 @@ import "./Login.css";
 import axios from "axios";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -23,17 +23,22 @@ const Login = () => {
     setErrorMessage("");
 
     try {
-      const response = await axios.post("http://localhost:3000/login", formData);
+      const response = await axios.post(
+        "http://localhost:7001/login",
+        formData
+      );
+      console.log(response);
       if (response.status === 200) {
         // Save token (if needed)
         localStorage.setItem("authToken", response.data.token);
 
         // Redirect to dashboard/home page
-        navigate("/dashboard");
+        navigate("/");
       }
     } catch (error) {
       setErrorMessage(
-        error.response?.data?.error || "Invalid email or password. Please try again."
+        error.response?.data?.error ||
+          "Invalid email or password. Please try again."
       );
     }
   };
@@ -62,10 +67,10 @@ const Login = () => {
               </label>
               <input
                 type="email"
-                id="email"
+                id="username"
                 className="form-control"
                 placeholder="Enter your email address"
-                value={formData.email}
+                value={formData.username}
                 onChange={handleChange}
               />
             </div>
@@ -87,15 +92,22 @@ const Login = () => {
                 className="password-toggle-icon position-absolute"
                 onClick={togglePasswordVisibility}
               >
-                <i className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
+                <i
+                  className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                ></i>
               </span>
             </div>
 
             {/* Error Message */}
-            {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
+            {errorMessage && (
+              <p className="text-danger text-center">{errorMessage}</p>
+            )}
 
             {/* Login Button */}
-            <button className="btn btn-primary w-100 mb-3 login-btn" type="submit">
+            <button
+              className="btn btn-primary w-100 mb-3 login-btn"
+              type="submit"
+            >
               LOGIN
             </button>
 

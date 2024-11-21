@@ -41,16 +41,17 @@ const SignUp = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/users", {
-        name,
-        email,
-        password,
+      const response = await axios.post("http://localhost:7001/register", {
+        username: email,
+        fullname: name,
+        password: password,
       });
-      if (response.status === 200) {
+      if (response.status === 201) {
         setSuccessMessage("Sign up successful! You can now log in.");
         setFormData({ name: "", email: "", password: "", confirmPassword: "" });
       }
     } catch (error) {
+      console.log("error", error);
       setErrorMessage(
         error.response?.data?.error || "Failed to sign up. Please try again."
       );
@@ -76,7 +77,9 @@ const SignUp = () => {
           <form onSubmit={handleSubmit}>
             {/* Name Input */}
             <div className="signup-form-group mb-3">
-              <label htmlFor="name" className="form-label">Name</label>
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
               <input
                 type="text"
                 id="name"
@@ -89,7 +92,9 @@ const SignUp = () => {
 
             {/* Email Input */}
             <div className="signup-form-group mb-3">
-              <label htmlFor="email" className="form-label">Email Address</label>
+              <label htmlFor="email" className="form-label">
+                Email Address
+              </label>
               <input
                 type="email"
                 id="email"
@@ -102,7 +107,9 @@ const SignUp = () => {
 
             {/* Password Input */}
             <div className="signup-form-group mb-4 position-relative">
-              <label htmlFor="password" className="form-label">Password</label>
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
@@ -115,13 +122,17 @@ const SignUp = () => {
                 className="password-toggle-icon position-absolute"
                 onClick={togglePasswordVisibility}
               >
-                <i className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
+                <i
+                  className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                ></i>
               </span>
             </div>
 
             {/* Confirm Password Input */}
             <div className="signup-form-group mb-4 position-relative">
-              <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+              <label htmlFor="confirmPassword" className="form-label">
+                Confirm Password
+              </label>
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 id="confirmPassword"
@@ -134,16 +145,27 @@ const SignUp = () => {
                 className="password-toggle-icon position-absolute"
                 onClick={toggleConfirmPasswordVisibility}
               >
-                <i className={`fas ${showConfirmPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
+                <i
+                  className={`fas ${
+                    showConfirmPassword ? "fa-eye-slash" : "fa-eye"
+                  }`}
+                ></i>
               </span>
             </div>
 
             {/* Error and Success Messages */}
-            {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
-            {successMessage && <p className="text-success text-center">{successMessage}</p>}
+            {errorMessage && (
+              <p className="text-danger text-center">{errorMessage}</p>
+            )}
+            {successMessage && (
+              <p className="text-success text-center">{successMessage}</p>
+            )}
 
             {/* Sign Up Button */}
-            <button className="btn btn-primary w-100 mb-3 signup-btn" type="submit">
+            <button
+              className="btn btn-primary w-100 mb-3 signup-btn"
+              type="submit"
+            >
               SIGN UP
             </button>
 

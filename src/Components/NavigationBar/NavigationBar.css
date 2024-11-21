@@ -1,24 +1,59 @@
+:root {
+    --primary-bg-color: #28a745; /* สีเขียวหลัก */
+    --secondary-bg-color: #218838; /* สีเขียวเข้มสำหรับมือถือ */
+}
+
+/* Navbar พื้นฐาน */
 .navbar {
-    background-color: var(--primary-bg-color);
+    background-color: var(--primary-bg-color); /* ใช้สีเขียวหลัก */
 }
 
 .navbar .navbar-toggler {
-    border-color: white;
+    border-color: white; /* ขอบปุ่ม toggle เป็นสีขาว */
 }
 
 .navbar .navbar-toggler-icon,
 .navbar .navbar-brand img {
-    filter: invert();
+    filter: invert(1); /* ทำให้ไอคอนและโลโก้เป็นสีตรงข้าม */
 }
 
 .navbar .navbar-brand img {
-    transform: rotate(45deg);
-    width: 1.5rem;
+    transform: rotate(0deg); /* ไม่ให้โลโก้หมุน */
+    width: 2rem; /* ปรับขนาดโลโก้ */
 }
 
+
+
+/* ปุ่ม Sign In เป็นสี primary */
+.navbar .btn-primary {
+  background-color: #007bff; /* สีหลัก (primary) */
+  border-color: #007bff; /* ขอบปุ่มเป็นสีหลัก */
+  color: white; /* ข้อความในปุ่มเป็นสีขาว */
+}
+
+/* ปรับสีของปุ่ม Sign In เมื่อ hover หรือ focus */
+.navbar .btn-primary:hover,
+.navbar .btn-primary:focus {
+  background-color: #0056b3; /* สีหลักเข้มเมื่อเอาเมาส์ชี้หรือโฟกัส */
+  border-color: #0056b3; /* ขอบปุ่มเป็นสีหลักเข้ม */
+}
+
+/* ปุ่ม Sign Out เป็นสี danger */
+.navbar .btn-danger {
+  font-size: 1rem; /* ปรับขนาดข้อความในปุ่ม */
+  margin-left: 10px; /* เพิ่มช่องว่างระหว่างปุ่ม Sign In และ Sign Out */
+}
+
+/* ปรับสีของปุ่ม Sign Out เมื่อ hover หรือ focus */
+.navbar .btn-danger:hover,
+.navbar .btn-danger:focus {
+  background-color: #c82333; /* สีแดงเข้มเมื่อเอาเมาส์ชี้หรือโฟกัส */
+  border-color: #bd2130; /* ขอบปุ่มเป็นสีแดงเข้ม */
+}
+
+/* ปรับ Navbar สำหรับหน้าจอขนาดเล็ก */
 @media screen and (max-width: 576px) {
     .navbar {
-        background-color: var(--secondary-bg-color);
+        background-color: var(--secondary-bg-color); /* สีเขียวเข้มสำหรับมือถือ */
     }
-    
 }

@@ -58,7 +58,7 @@ const ReviewAdd = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:3000/reviews/add", reviewData);
+      const response = await axios.post("http://localhost:7001/reviews/add", reviewData);
       if (response.status === 200) {
         alert("Review submitted successfully!");
         navigate("/");
